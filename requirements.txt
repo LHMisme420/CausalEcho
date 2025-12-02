@@ -4,3 +4,4 @@ numpy>=1.24.0
 # Add any other deps here, e.g.:
 # torch>=2.0.0  (if you're using PyTorch for advanced checks)
 # scipy>=1.10.0
+tqdm
