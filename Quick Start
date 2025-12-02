@@ -1,0 +1,15 @@
+# Clone this repo (you're already here, legend)
+git clone https://github.com/LHMisme420/CausalEcho/new/main
+cd CausalEcho
+
+# Install the truth serum
+pip install -r requirements.txt
+
+# Scan a single file (video or image)
+python causal_echo_detector.py "evidence/suspicious_ceo_speech.mp4"
+
+# Scan an entire folder of chaos
+python causal_echo_detector.py "./downloaded_from_twitter/" --threshold 0.75
+
+# Live webcam mode — see if YOU are real
+python webcam_realtime.py
