@@ -3,3 +3,4 @@ pillow
 transformers
 torch
 numpy
+accelerate  # For faster model loading
