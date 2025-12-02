@@ -1,3 +1,5 @@
 streamlit
 pillow
+transformers
+torch
 numpy
