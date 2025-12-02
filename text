@@ -11,3 +11,9 @@ CausalEcho/
 ├── examples/                     Test videos (real + deepfakes)
 ├── requirements.txt
 └── README.md                     (You are here. Hi.)
+opencv-python>=4.8
+numpy>=1.24
+scipy>=1.11
+requests>=2.31
+tqdm>=4.66
+streamlit>=1.30
