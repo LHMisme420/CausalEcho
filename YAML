@@ -1,0 +1,52 @@
+
+---
+
+## 6. Verdict Threshold System
+
+| Causality Score | Verdict |
+|-----------------|----------|
+| 0.85 – 1.00 | Highly Authentic |
+| 0.70 – 0.85 | Likely Authentic |
+| 0.50 – 0.70 | Indeterminate |
+| 0.30 – 0.50 | Likely Synthetic |
+| 0.00 – 0.30 | Highly Synthetic |
+
+---
+
+## 7. Interpretation Policy
+
+CausalEcho does not issue binary truth claims.
+
+It issues:
+
+- **Likelihood bands**
+- **Metric breakdowns**
+- **Violation vectors**
+
+The system is designed to assist human analysts — not replace them.
+
+---
+
+## 8. Model Evolution Policy
+
+This causality model is versioned and **designed to evolve under empirical validation**.
+
+Future expansions may include:
+
+- Audio causality layers
+- Sensor physics modeling
+- Multi-spectral verification
+- Physical simulation reconciliation
+
+---
+
+## Final Definition
+
+> A causality violation is a **measurable deviation from the physical, temporal, biological, or entropic constraints observed in real-world systems.**
+
+This is what CausalEcho detects.
+
+Not deception.
+Not intent.
+
+**Constraint failure.**
