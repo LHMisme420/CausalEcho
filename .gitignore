@@ -5,3 +5,8 @@ models/
 *.mp4
 *.jpg
 *.png
+# Save this as C:\Users\YourName\.gitignore_global
+# Windows junk
+AppData/
+NTUSER.*
+ntuser.*
