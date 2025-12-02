@@ -1,37 +1,29 @@
 # streamlit_app.py
 import streamlit as st
-from causal_echo_detector import CausalEchoDetector
 import cv2
 import numpy as np
+import tempfile
+from causal_echo_detector import CausalEchoDetector
 
-st.set_page_config(page_title="CausalEcho", page_icon="🛡️", layout="centered")
-
-st.title("🛡️ CausalEcho")
-st.subheader("The Deepfake Disprover")
-st.write("Upload a video or image. Physics will judge.")
+st.set_page_config(page_title="CausalEcho", page_icon="shield")
+st.title("CausalEcho")
+st.caption("The first physics-based deepfake disprover")
 
 detector = CausalEchoDetector(threshold=0.75)
-
-file = st.file_uploader("Drop your evidence here", type=['mp4', 'mov', 'avi', 'jpg', 'png', 'webp'])
+file = st.file_uploader("Drop video/image here", type=['mp4','mov','avi','jpg','png','webp'])
 
 if file:
-    with st.spinner("Interrogating reality..."):
-        bytes_data = file.read()
-        import tempfile
-        with tempfile.NamedTemporaryFile(delete=False, suffix=file.name) as tmp:
-            tmp.write(bytes_data)
-            path = tmp.name
+    with st.spinner("Interrogating the laws of physics..."):
+        tfile = tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.name)[1])
+        tfile.write(file.read())
+        tfile.close()
+        score = detector.scan_file(tfile.name)
+        os.unlink(tfile.name)
 
-        score = detector.scan_file(path)
-        label = "REAL ✔" if score >= 0.75 else "DEEPFAKE ✘"
-
-        st.write(f"### Verdict: **{label}**")
+        verdict = "REAL" if score >= 0.75 else "DEEPFAKE (Acausal)"
+        st.metric("Verdict", verdict, f"{score*100:.1f}%")
         st.progress(score)
-        st.write(f"Causal Alignment: `{score:.3f}`")
-
         if file.type.startswith("video"):
             st.video(file)
         else:
             st.image(file)
-
-st.caption("Powered by physics. Immune to AI. Built for truth.")
