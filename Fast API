@@ -1,0 +1,8 @@
+from fastapi import FastAPI
+from engine import verify
+
+app = FastAPI()
+
+@app.post("/verify")
+def verify_media(file_path: str):
+    return verify(file_path)
