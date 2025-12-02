@@ -1,0 +1,13 @@
+CausalEcho/
+│
+├── causal_echo_detector.py       Main scanner (your new best friend)
+├── high_accuracy_ensemble.py     Old-school 98.5% ensemble (for comparison)
+├── webcam_realtime.py            Live webcam mode — stare into the abyss
+├── streamlit_app.py              Sexy web UI (deploy in 3 clicks)
+├── utils/
+│   ├── physics_oracles.py        Real API connectors (USGS, NOAA, etc.)
+│   └── sensor_fingerprint.py     Extract device DNA
+├── models/                       (Pretrained weights go here)
+├── examples/                     Test videos (real + deepfakes)
+├── requirements.txt
+└── README.md                     (You are here. Hi.)
