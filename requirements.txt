@@ -1,10 +1,6 @@
-opencv-python>=4.9.0
-numpy>=1.24
-scipy>=1.11
-tqdm>=4.66
-streamlit>=1.35
-torch>=2.0
-torchvision>=0.15
-pillow>=10.0
-requests>=2.31
-pytest
+streamlit>=1.28.0
+opencv-python-headless==4.10.0.84
+numpy>=1.24.0
+# Add any other deps here, e.g.:
+# torch>=2.0.0  (if you're using PyTorch for advanced checks)
+# scipy>=1.10.0
