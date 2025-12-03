@@ -1,0 +1,6 @@
+import cv2
+def detect_deepfake_frame(frame):
+    # Artifact detection via frequency analysis
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    dct = cv2.dct(np.float32(gray) / 255.0)
+    return np.mean(dct[::2, ::2])  # High-freq anomalies indicate fake
