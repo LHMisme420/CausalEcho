@@ -34,3 +34,11 @@ if uploaded:
     
 else:
     st.info("Upload any image → this version will NEVER say “Reality holds” again")
+from inference import classify_with_uncertainty, log_forensic_event
+
+label = classify_with_uncertainty(ai_prob)
+
+# OPTIONAL: if you know ground truth (during testing)
+# log_forensic_event("img_123.jpg", ai_prob, label, ground_truth="REAL")
+
+return label, ai_prob
