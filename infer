@@ -1,0 +1,4 @@
+# After causal inference
+base_score = your_bayesian_prob  # Existing P(fake)
+adjusted_score = base_score + (0.3 * features['watermark_suspicion'])  # Bump it up
+return adjusted_score
