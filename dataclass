@@ -1,0 +1,55 @@
+from dataclasses import dataclass
+from datetime import datetime
+from typing import Dict, Optional
+
+
+@dataclass
+class DecisionRecord:
+    actor_id: str
+    timestamp: datetime
+    round_id: int
+    option_selected: str
+    rationale: str
+    stress_level: Optional[int] = None
+
+
+@dataclass
+class PredictionRecord:
+    round_id: int
+    predicted_outcomes: Dict[str, float]
+    uncertainty: float
+    ethics_score_pred: float
+
+
+@dataclass
+class OutcomeRecord:
+    round_id: int
+    actual_outcomes: Dict[str, float]
+
+
+@dataclass
+class DivergenceRecord:
+    round_id: int
+    cdi: float  # Causal Divergence Index
+    notes: Optional[str] = None
+
+
+@dataclass
+class EthicsRecord:
+    round_id: int
+    ethics_score_actual: float
+    decision_justified: bool
+    primary_responsible_actor: str
+    policy_violations: Optional[Dict[str, str]] = None  # {policy_id: description}
+
+
+@dataclass
+class ForensicRecord:
+    round_id: int
+    decision: DecisionRecord
+    prediction: PredictionRecord
+    outcome: OutcomeRecord
+    divergence: DivergenceRecord
+    ethics: EthicsRecord
+    record_hash: str
+    previous_hash: Optional[str] = None
