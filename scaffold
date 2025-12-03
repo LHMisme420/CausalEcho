@@ -1,0 +1,71 @@
+import streamlit as st
+
+st.set_page_config(layout="wide")
+
+# HEADER
+st.markdown("## 🛡️ CausalEcho — Hospital Cyber Defense Command")
+col_h1, col_h2, col_h3, col_h4 = st.columns(4)
+col_h1.metric("Incident Status", "ACTIVE")
+col_h2.metric("Round", "T1")
+col_h3.metric("Commander", "Cmd_01")
+col_h4.metric("Elapsed Time", "03:21")
+
+# MAIN GRID
+left, center = st.columns([1, 2])
+
+# LEFT — TELEMETRY
+with left:
+    st.subheader("System Telemetry")
+    st.progress(0.75, text="EHR Operational")
+    st.progress(0.90, text="ICU Operational")
+    st.progress(0.65, text="Med Dispense")
+    st.metric("Patient Risk Index", 42)
+    st.metric("Legal Risk", 33)
+
+# CENTER — CAUSAL FORECAST
+with center:
+    st.subheader("Causal Forecast")
+    c1, c2, c3 = st.columns(3)
+
+    with c1:
+        st.markdown("### OPTION A — Isolate Core Systems")
+        st.metric("Ransomware Spread", "-60%")
+        st.metric("Patient Risk", "+10%")
+        st.metric("Ethics Score", "0.78")
+
+    with c2:
+        st.markdown("### OPTION B — Monitor Only")
+        st.metric("Ransomware Spread", "+70%")
+        st.metric("Patient Risk", "-2%")
+        st.metric("Ethics Score", "0.42")
+
+    with c3:
+        st.markdown("### OPTION C — Full Lockdown")
+        st.metric("Ransomware Spread", "-90%")
+        st.metric("Patient Risk", "+55%")
+        st.metric("Ethics Score", "0.51")
+
+# BOTTOM GRID
+decisions, ethics = st.columns(2)
+
+# DECISION PANEL
+with decisions:
+    st.subheader("Commander Decision")
+    option = st.radio("Select Action:", ["Option A", "Option B", "Option C"])
+    rationale = st.text_area("Decision Rationale")
+    stress = st.slider("Stress Level", 0, 100, 50)
+    execute = st.button("EXECUTE DECISION")
+
+# ETHICS PANEL
+with ethics:
+    st.subheader("Ethics & Responsibility")
+    st.metric("Ethics Score", "Pending")
+    st.text("Responsible Actor: Pending")
+    st.text("Policy Violations: None")
+
+# FOOTER — FORENSICS
+st.markdown("---")
+f1, f2, f3 = st.columns(3)
+f1.metric("Causal Divergence Index", "Pending")
+f2.metric("Tamper Status", "Unsealed")
+f3.metric("Forensic Hash", "—")
