@@ -43,3 +43,21 @@ git clone https://github.com/LHMisme420/CausalEcho.git
 cd CausalEcho
 pip install -r requirements.txt
 streamlit run streamlit_app.py
+# CausalEcho — Hospital Cyber Defense Demo
+
+This project demonstrates a **human–AI causal accountability loop** for
+hospital cyber defense decision-making.
+
+## Features
+- Causal prediction before action
+- Human commander decision capture
+- Outcome simulation
+- Ethics scoring
+- Causal divergence measurement
+- Tamper-proof forensic audit
+
+## Run Locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
