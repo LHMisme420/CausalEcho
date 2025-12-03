@@ -61,3 +61,17 @@ hospital cyber defense decision-making.
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+## False-Positive Safety & Uncertainty Handling
+
+This system uses a **three-class safety model**:
+
+- REAL (P ≤ 0.40)
+- UNCERTAIN (0.40 < P < 0.85)
+- AI (P ≥ 0.85)
+
+This prevents:
+- False criminalization of real people
+- Overconfident AI hallucinations
+- Civil liberties violations
+
+All uncertain and false-positive events are logged for forensic review.
