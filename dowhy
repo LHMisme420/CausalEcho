@@ -1,0 +1,6 @@
+from dowhy import CausalModel
+model = CausalModel(data=features_df, treatment='motion_var', outcome='shadow_consistency',
+                    graph=causal_graph)
+identified_estimand = model.identify_effect()
+estimate = model.estimate_effect(identified_estimand, method_name="backdoor.propensity_score_matching")
+# Use estimate.value to adjust score
