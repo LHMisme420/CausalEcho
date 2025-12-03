@@ -33,7 +33,7 @@ Light coming from nowhere? Shadows moving backward? Effect before cause?
 
 ## Live Demo
 
-🚀 **Try it now:** https://causalecho.streamlit.app  
+🚀 **Try it now:**https://causalecho-ymxrkfvgp5exbcc4hws9bx.streamlit.app/
 *(Free Streamlit Community Cloud — deploy in 30 seconds, instructions below)*
 
 ## Quick Start (Local)
